@@ -1,5 +1,3 @@
-let buttons = false
-
 document.getElementById("min-btn").addEventListener("click", function (e) {
      window.electronAPI.changeWindow("min")
 });
