@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'unsafe-inline' 'self'; connect-src *; style-src-elem *; font-src *; style-src 'unsafe-inline' 'self'; img-src *; frame-src *"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./renderer.js" type="module"></script>
+    <title>Hype Monitor</title>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+  <body>
+    <nav class="nav-menu">
+      <button>
+        <img
+          class="nav-btn Home"
+          src="https://cdn.discordapp.com/attachments/994594646489567312/1052324659259002970/home.png"
+          id="home-btn"
+        />
+      </button>
+
+      <button>
+        <img
+          class="nav-btn Calendar"
+          src="https://cdn.discordapp.com/attachments/994594646489567312/1052324658625663097/calendar.png"
+          id="calendar-btn"
+        />
+      </button>
+
+      <button>
+        <img
+          class="nav-btn Account"
+          src="https://cdn.discordapp.com/attachments/994594646489567312/1052324658311082024/account.png"
+          id="account-btn"
+        />
+      </button>
+
+      <button>
+        <img
+          class="nav-btn Profiles"
+          src="https://cdn.discordapp.com/attachments/994594646489567312/1052324660290785401/profiles.png"
+          id="profiles-btn"
+        />
+      </button>
+    </nav>
+    <main>
+      <div class="draggable">
+        <button type="button" class="close-button" id="close-btn"></button>
+        <button type="button" class="maximize-button" id="max-btn"></button>
+        <button type="button" class="minimize-button" id="min-btn"></button>
+        <label class="date" id="date">00:00:00</label>
+        <label class="div" id="dot">•</label>
+        <label class="username" id="user">aaronmansfield5</label>
+      </div>
+      <h1 class="welcome" id="display-title">Welcome, aaronmansfield5!</h1>
+      <ul class="item-grid" id="home-page">
+        <li id="test-btn" style="visibility: collapse;" class="itemDisplay">
+          <img
+            src="https://i.stack.imgur.com/ATB3o.gif"
+            class="thumbnail"
+          />
+          <h3 style="font-size: 17px;" class="itemName">Sneaker Name 'Colour Way'</h3>
+          <p class="styleCode">Style Code: XXXXX-XXX</p>
+          <p class="releaseDate">XXth XXXXX 202X</p>
+          <button id="web-btn" class="web-btn">Website</button>
+          <button>More Info</button>
+        </li>
+      </ul>
+
+      <ul class="item-grid" id="calendar-page" style="opacity: 0;">
+        <li>Template</li>
+      </ul>
+    </main>
   </body>
 </html>
