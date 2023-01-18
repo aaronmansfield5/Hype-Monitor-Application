@@ -1,0 +1,16 @@
+{
+  "name": "NEA",
+  "productName": "NEA",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "0020022748",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "20.1.4"
+  }
+}
